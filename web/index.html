@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RushGlow Media - Social Media Marketing Agency</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for aesthetic look */
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+        }
+        .hero-section {
+            background-image: url('https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .portfolio-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .portfolio-card:hover {
+            transform: scale(1.05);
+        }
+        .portfolio-card img {
+            width: 100%;
+            height: 192px; /* h-48 in Tailwind */
+            object-fit: cover;
+            border-radius: 6px; /* rounded-md in Tailwind */
+            margin-bottom: 16px; /* mb-4 in Tailwind */
+        }
+        .portfolio-card-image-only {
+            padding: 0; /* Remove padding to make image full size */
+            overflow: hidden; /* Ensure image doesn't overflow */
+        }
+        .portfolio-card-image-only img {
+            margin-bottom: 0; /* Remove margin below image */
+            height: 100%; /* Make image take full height of the card */
+            border-radius: 8px; /* Match the card's border-radius */
+        }
+        .btn-gold {
+            background-color: #f5c518;
+            color: #1a3c34;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #e0b015;
+        }
+        .service-card {
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+            border-radius: 8px;
+            z-index: 0;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .service-card-content {
+            position: relative;
+            z-index: 1;
+        }
+        .service-card h3 {
+            color: #f5c518; /* Gold color for headings to stand out */
+        }
+        .testimonial-card {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+            border-radius: 8px;
+            z-index: 0;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .testimonial-card-content {
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-card h3 {
+            color: #f5c518; /* Gold color for names to stand out */
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white text-gray-800 p-4 flex justify-between items-center shadow-md">
+        <h1 class="text-2xl font-bold flex items-center">
+            <span class="text-green-500 mr-2">🔥</span> RushGlow Media ✨
+        </h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="hover:text-green-600">Home</a></li>
+                <li><a href="#services" class="hover:text-green-600">Services</a></li>
+                <li><a href="book-meeting.html" class="hover:text-green-600">Book a Meeting</a></li>
+                <li><a href="#footer" class="hover:text-green-600">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-4">Grow Fast with RushGlow Media!</h2>
+            <p class="text-lg mb-6">Fun Social Media Content for Your Business! 📸</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#services" class="btn-gold">See What We Do</a>
+                <a href="book-meeting.html" class="btn-gold">Book a Meeting</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-10 px-4 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">With Us</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Service 1: Content Creation -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md" style="background-image: url('pic.jpg');">
+                <div class="service-card-content">
+                    <h3 class="text-xl font-semibold mb-3">Content Creation 📸</h3>
+                    <p class="mb-4">We create eye-catching Instagram posts, reels, and stories tailored to your brand’s vibe. Our team designs visually stunning graphics, writes engaging captions, and produces high-quality videos to captivate your audience and boost engagement.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Custom graphics and photo editing for a cohesive feed</li>
+                        <li>Trendy reels with music and effects to go viral</li>
+                        <li>Interactive stories with polls, quizzes, and stickers</li>
+                    </ul>
+                    <p>Perfect for businesses looking to stand out with fresh, fun content that resonates with their followers!</p>
+                </div>
+            </div>
+            <!-- Service 2: Social Media Management -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md" style="background-image: url('https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=400');">
+                <div class="service-card-content">
+                    <h3 class="text-xl font-semibold mb-3">Social Media Management 📈</h3>
+                    <p class="mb-4">Let us take the stress out of managing your social media! We handle everything from scheduling posts to engaging with your audience, ensuring your accounts stay active and grow steadily.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Daily posting to keep your accounts buzzing</li>
+                        <li>Responding to comments and messages to build community</li>
+                        <li>Hashtag strategies and follower growth campaigns</li>
+                    </ul>
+                    <p>Ideal for busy business owners who want consistent growth without the hassle!</p>
+                </div>
+            </div>
+            <!-- Service 3: Analytics & Strategy -->
+            <div class="service-card bg-white p-6 rounded-lg shadow-md" style="background-image: url('https://images.pexels.com/photos/6694543/pexels-photo-6694543.jpeg?auto=compress&cs=tinysrgb&w=400');">
+                <div class="service-card-content">
+                    <h3 class="text-xl font-semibold mb-3">Analytics & Strategy 📊</h3>
+                    <p class="mb-4">We dive deep into your social media performance to create a winning strategy. Using data-driven insights, we optimize your content and campaigns to maximize reach, engagement, and conversions.</p>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Monthly performance reports with actionable insights</li>
+                        <li>Audience analysis to target the right followers</li>
+                        <li>Custom strategies for campaigns, launches, and promotions</li>
+                    </ul>
+                    <p>Great for brands ready to take their social media presence to the next level with a strategic approach!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-10 px-4">
+        <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Our Work</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Portfolio 1: Food Truck Promotion -->
+            <div class="portfolio-card bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Food Truck Promotion" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-green-600">Food Truck Promotion</h3>
+                <p class="text-gray-600">A mouth-watering Instagram story series for TastyBites Truck, including polls and swipe-ups. Boosted event attendance by 40% with 1,000 story views! 🍔</p>
+            </div>
+            <!-- Portfolio 2: Wellness Retreat Launch -->
+            <div class="portfolio-card bg-white p-4 rounded-lg shadow-md">
+                <img src="https://images.pexels.com/photos/3171815/pexels-photo-3171815.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Wellness Retreat Launch" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-green-600">Wellness Retreat Launch</h3>
+                <p class="text-gray-600">A strategic Instagram launch for SerenityRetreats, with curated posts and reels. Achieved 500 bookings and 5,000 impressions in the first month! 🧘</p>
+            </div>
+            <!-- Portfolio 3: Image Only (pic.jpg) -->
+            <div class="portfolio-card portfolio-card-image-only bg-white rounded-lg shadow-md">
+                <img src="hi.jpg" alt="Portfolio Image" class="w-full object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-10 px-4 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">What Our Clients Say</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card p-6 rounded-lg shadow-md" style="background-image: url('https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=400');">
+                <div class="testimonial-card-content">
+                    <p class="mb-4 italic">"RushGlow Media transformed our Instagram presence! Their reels doubled our engagement, and we gained 1,000 new followers in just a month. Highly recommend!"</p>
+                    <h3 class="text-lg font-semibold">Sarah J., Boutique Owner</h3>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card p-6 rounded-lg shadow-md" style="background-image: url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400');">
+                <div class="testimonial-card-content">
+                    <p class="mb-4 italic">"The team at RushGlow took the stress off my shoulders. They manage our socials perfectly, and their strategies helped us launch our new product with a bang!"</p>
+                    <h3 class="text-lg font-semibold">Mike R., Startup Founder</h3>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card p-6 rounded-lg shadow-md" style="background-image: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400');">
+                <div class="testimonial-card-content">
+                    <p class="mb-4 italic">"Their analytics reports are a game-changer! We now understand our audience better and have seen a 30% increase in conversions. Amazing work!"</p>
+                    <h3 class="text-lg font-semibold">Emily T., E-commerce Manager</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-800 text-white p-6 text-center">
+        <p class="mb-4">Follow Us: <a href="https://www.instagram.com/RushGlowMedia" target="_blank" class="underline hover:text-green-400">@RushGlowMedia</a></p>
+        <p class="mb-4">Email: rushglowmedia@email.com</p>
+        <p class="mt-4">© 2025 RushGlow Media. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
